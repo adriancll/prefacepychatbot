@@ -27,6 +27,8 @@ question_responses = {
 
 while True:
     user_input = input("You: ")
+    if user_input == "quit":
+        break
     question = find_best_match(user_input.lower(), sum(question_responses.values(), []))
     response = ''
     if question:
