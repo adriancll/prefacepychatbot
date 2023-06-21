@@ -28,4 +28,5 @@ while True:
             print(random.choice(Normal))
         else: 
             print(random.choice(Negative))
+    
         
