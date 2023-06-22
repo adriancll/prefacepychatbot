@@ -1,22 +1,24 @@
 import json
+import requests
 
 data = {}
 
 while True:
-    name = input("Enter a name (or 'exit' to quit): ")
+    # Call uinames.com API to get a random name with gender
+    response = requests.get("https://uinames.com/api/")
+    result = response.json()
     
-    if name == "exit":
+    name = f"{result['name']} {result['surname']}"
+    gender = result['gender'].upper()
+    
+    data[name] = gender
+    
+    choice = input(f"The generated name '{name.title()}' is it a boy or girl? Type 'B' for boy and 'G' for girl: ")
+    
+    if choice.lower() == 'n':
         break
     
-    gender = input("Is it a boy or girl? Type 'B' for boy and 'G' for girl: ")
-    
-    if gender.lower() not in ('b', 'g'):
-        print("Invalid input. Please type 'B' for boy and 'G' for girl.")
-        continue
-    
-    data[name] = gender.upper()
-
-with open('bgmodel.json', 'w') as f:
+with open('names.json', 'w') as f:
     json.dump(data, f)
 
 print("Data saved to names.json")
