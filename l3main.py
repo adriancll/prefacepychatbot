@@ -22,8 +22,14 @@ question_responses = {
     'favorite_color': {
         'patterns': ['what is your favorite color?', 'do you like any colors?', 'what color do you like?', 'which color do you prefer?', 'any favorite color?', 'is there any color you like?', 'do you have a color preference?', 'what is your preferred color?', 'what color do you think is the best?', 'what color is the prettiest?', 'what color makes you happy?'],
         'responses': ['I am a machine learning model, so I do not have the ability to like or dislike colors.', 'As an AI language model, I do not have the capability to possess preferences or emotions, including a favorite color.', 'I dont have a favorite color, but I think all colors are beautiful in their own way.', 'There is no particular color that I prefer.', 'Colors are subjective and vary from person to person.', 'Which color do you like best?']
+    },
+    'weather': {
+        'patterns': ['what is the weather like today?', 'what will be the temperature today?', 'is it going to rain today?', 'do I need an umbrella today?', 'will it be sunny today?', 'what is the forecast for tomorrow?', 'what is the weather like in [city]?', 'what is the temperature in [city]?'],
+        'responses': ['To get the weather information, please provide me with your location or the city name.', 'Please specify the location or city name to get the weather information.', 'Sure, I can help you with the weather information. Could you please provide me with your location or the city name?', 'Let me check the weather forecast for you. Please tell me the location or city name.']
     }
 }
+
+
 
 while True:
     user_input = input("You: ")
